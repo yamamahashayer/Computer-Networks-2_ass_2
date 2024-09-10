@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        in
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+       
+        a {
+            display: block;
+            padding: 15px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-bottom: 10px;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input {
+  width: 70%;
+}
+    </style>
+    <script src="pipe.js" defer></script>
+    <title>System table </title>
+</head>
+<body>
+    <h1>SNMP Manager</h1>
+    <a href="index.html">Back to Home</a>
+<label for="obj">sysObjectID</label>
+<input type="text"  id="obj" name="obj" class="obj" value="Non" readonly><br>
+<label for="des">sysDescr   </label>
+<input type="text"  id="des"name="des" class="des" value="Non" readonly><br>
+<label for="time">sysUpTime  </label>
+<input type="text" id="time" name="time" class="time" value="Non" readonly><br>
+<label for="contact">sysContact </label>
+<input type="text" id="contact" name="contact" value="Non"  class="cont"><button id="saveButton3" class="save3" onclick="setSnmpData('cont')">Save</button>
+<br>
+<label for="name">sysName    </label>
+<input type="text" id="name"  name="name" class="name" ><button id="saveButton1" class="save1" onclick="setSnmpData('name')">Save</button>
+<br>
+
+<label for="location">sysLocation</label>
+<input type="text" id="location" name="location" class="loc"><button id="saveButton2" class="save2" onclick="setSnmpData('loc')">Save</button>
+<br>
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        getSnmpData("system");
+    });
+</script>
+
+</body>
+</html>
